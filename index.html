@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1回 笹木杯</title>
+<meta name="description" content="好きな本を課題図書にして、いろいろな人の感想文を読みたい。それだけの理由で始まった、個人主催の読書感想文コンクール。応募受付:2026年10月1日〜2027年1月3日。">
+<meta name="theme-color" content="#96cf9e">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="第1回 笹木杯読書感想文コンクール">
+<meta property="og:title" content="第1回 笹木杯読書感想文コンクール">
+<meta property="og:description" content="ラノベからカラマーゾフまで。好きな本を課題図書にして、いろいろな人の感想文を読みたい。個人主催の読書感想文コンクール、応募受付は2026年10月1日から。">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://sasakihai.com/">
+<meta property="og:image" content="https://sasakihai.com/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="第1回 笹木杯読書感想文コンクール">
+<meta name="twitter:description" content="ラノベからカラマーゾフまで。好きな本の感想文を募集します。応募受付は2026年10月1日から。">
+<meta name="twitter:image" content="https://sasakihai.com/ogp.png">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%2396cf9e'/%3E%3Ccircle cx='60' cy='26' r='24' fill='%2343917b'/%3E%3Cpath d='M16 36a44 44 0 0 0 88 0z' fill='%23d64545' style='mix-blend-mode:multiply'/%3E%3Crect x='53' y='80' width='14' height='20' fill='%23402e3a'/%3E%3Crect x='32' y='100' width='56' height='11' rx='5' fill='%23402e3a'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --green: #96cf9e;  --red: #d64545;
+  --plum: #402e3a;
+  --teal: #43917b;
+  --bg: #96cf9e;
+  --panel: #f7faf2;
+  --ink: #362836;
+  --ink-soft: #5b4a5b;
+  --ink-inv: #f2ebe4;
+  --line: rgba(64, 46, 58, 0.22);
+  --red-deep: #ab2e2b;
+  --teal-deep: #2c6f5a;
+  --shadow: 0 3px 0 rgba(64, 46, 58, 0.34);
+  --shadow-lift: 0 8px 0 -3px rgba(64, 46, 58, 0.3), 0 18px 28px -18px rgba(64, 46, 58, 0.85);
+  --sans: "Zen Kaku Gothic New", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  --geo: "Poppins", "Zen Kaku Gothic New", sans-serif;
+  --r: 18px;
+  --ease: cubic-bezier(.22, .61, .36, 1);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+body {
+  font-family: var(--sans);
+  background-color: var(--bg);
+  background-image: radial-gradient(rgba(64, 46, 58, 0.085) 1px, transparent 1.5px);
+  background-size: 24px 24px;
+  color: var(--ink);
+  line-height: 2;
+  font-size: 16px;
+  font-feature-settings: "palt" 1;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+p, li, td, dd, h2, h3, h4 { word-break: auto-phrase; line-break: strict; }
+h1, h2, h3, h4 { font-weight: 900; letter-spacing: 0.03em; }
+h2, h4 { text-wrap: balance; }
+::selection { background: var(--plum); color: #fff; }
+a { color: inherit; }
+
+.js [data-reveal] { opacity: 0; transform: translateY(16px); }
+.js [data-reveal].shown {
+  opacity: 1; transform: none;
+  transition: opacity .7s var(--ease), transform .7s var(--ease);
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .js [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+nav {
+  position: sticky; top: 0; z-index: 30;
+  background: var(--bg);
+  border-bottom: 1px solid rgba(64, 46, 58, 0.14);
+  transition: box-shadow .3s var(--ease);
+}
+nav.scrolled { box-shadow: 0 10px 22px -18px rgba(64, 46, 58, 1); }
+nav .inner {
+  max-width: 1060px; margin: 0 auto; padding: 0.7rem 1.4rem;
+  display: flex; align-items: center; gap: 1.1rem 1.5rem; flex-wrap: wrap;
+}
+.brand {
+  display: flex; align-items: center; gap: 0.5rem; margin-right: auto;
+  font-weight: 900; font-size: 1.08rem; letter-spacing: 0.14em;
+  color: var(--ink); text-decoration: none; white-space: nowrap;
+}
+.brand svg { width: 19px; height: 19px; display: block; flex: none; }
+nav .navlinks { display: flex; align-items: center; gap: 1.4rem; flex-wrap: wrap; }
+nav .navlinks a {
+  position: relative; color: var(--ink); text-decoration: none;
+  font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; padding-bottom: 0.2rem;
+}
+nav .navlinks a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px;
+  border-radius: 2px; background: var(--teal);
+  transform: scaleX(0); transform-origin: left; transition: transform .24s var(--ease);
+}
+nav .navlinks a:hover::after, nav .navlinks a.active::after { transform: scaleX(1); }
+
+.fixed-cta {
+  position: fixed; right: 1.4rem; bottom: 1.6rem; z-index: 40;
+  background: var(--red); color: #fff; text-decoration: none;
+  font-weight: 900; letter-spacing: 0.08em; font-size: 0.9rem;
+  padding: 0.85rem 1.7rem; border-radius: 999px;
+  box-shadow: 0 4px 0 rgba(64, 46, 58, 0.55);
+  transition: transform .18s var(--ease), background .18s;
+}
+.fixed-cta:hover { transform: translateY(-2px) rotate(-1.5deg); background: #e05752; }
+
+.geo { position: absolute; pointer-events: none; }
+.geo i { position: absolute; display: block; }
+.hero .deco-bl .c { mix-blend-mode: multiply; }
+.circle { border-radius: 50%; }
+.qc-bl { border-radius: 0 0 0 100%; }
+.qc-br { border-radius: 0 0 100% 0; }
+.qc-tl { border-radius: 100% 0 0 0; }
+.qc-tr { border-radius: 0 100% 0 0; }
+.tri { clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+
+header.hero {
+  position: relative; overflow: hidden;
+  min-height: 92vh; min-height: 92svh;
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center; padding: 4.5rem 1.2rem 6.5rem;
+}
+.hero .deco-tr { top: -90px; right: -80px; width: 320px; height: 320px; }
+.hero .deco-tr .a { inset: 0; background: var(--teal); border-radius: 50%; }
+.hero .deco-tr .b { top: 120px; right: 120px; width: 190px; height: 190px; background: var(--red); border-radius: 0 0 0 100%; }
+.hero .deco-bl { bottom: -80px; left: -50px; width: 340px; height: 340px; }
+.hero .deco-bl .a { left: 0; bottom: 0; width: 170px; height: 170px; background: var(--red); border-radius: 100% 0 0 0; }
+.hero .deco-bl .b { left: 170px; bottom: 0; width: 170px; height: 170px; background: var(--plum); border-radius: 0 100% 0 0; }
+.hero .deco-bl .c { left: 85px; bottom: 148px; width: 124px; height: 124px; background: var(--teal); border-radius: 50%; }
+.hero .deco-ml { top: 34%; left: 6%; width: 26px; height: 26px; }
+.hero .deco-ml .a { inset: 0; background: var(--red); border-radius: 50%; }
+.hero .deco-mr { top: 26%; right: 9%; width: 30px; height: 26px; }
+.hero .deco-mr .a { inset: 0; background: var(--plum); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+
+.hero .stage { position: relative; z-index: 2; }
+.hero .en {
+  font-family: var(--geo); font-size: 0.68rem; font-weight: 700;
+  letter-spacing: 0.42em; color: rgba(54, 40, 54, 0.62);
+  text-transform: uppercase; margin-bottom: 1.6rem;
+}
+.hero .cup { width: 108px; height: 106px; margin: 0 auto 1.6rem; display: block; }
+.hero .edition {
+  display: inline-block; font-size: 0.82rem; font-weight: 900; letter-spacing: 0.36em;
+  color: var(--panel); background: var(--plum); border-radius: 999px;
+  padding: 0.22rem 1.5rem 0.22rem 1.86rem; margin-bottom: 1.2rem;
+}
+.hero h1 {
+  font-size: clamp(4.2rem, 16vw, 9rem); line-height: 1.06; letter-spacing: 0.05em;
+  color: var(--plum); position: relative;
+}
+.hero h1 .accent { position: relative; display: inline-block; }
+.hero h1 .accent::before {
+  content: ""; position: absolute; inset: 11% -5% -3% 5%;
+  background: var(--red); border-radius: 50%;
+  mix-blend-mode: multiply; z-index: -1;
+}
+.hero .subname {
+  font-size: clamp(1rem, 3.2vw, 1.45rem); font-weight: 900; letter-spacing: 0.46em;
+  margin: 0.9rem 0 1.6rem; padding-left: 0.46em;
+}
+.hero .tagline {
+  display: inline-block; font-size: clamp(0.85rem, 2.4vw, 1rem); font-weight: 700;
+  letter-spacing: 0.13em; color: var(--panel); background: var(--teal);
+  padding: 0.35rem 1.7rem; border-radius: 999px; margin-bottom: 2.6rem;
+}
+.hero .period {
+  border-top: 1px solid rgba(64, 46, 58, 0.3);
+  border-bottom: 1px solid rgba(64, 46, 58, 0.3);
+  padding: 1rem 0.4rem 0.9rem;
+  width: fit-content; margin: 0 auto;
+}
+.hero .period .label {
+  display: block; font-size: 0.74rem; font-weight: 900; letter-spacing: 0.32em;
+  padding-left: 0.32em; color: var(--ink-soft); margin-bottom: 0.35rem;
+}
+.hero .dates {
+  font-family: var(--geo); font-size: clamp(1.9rem, 6.4vw, 3.1rem);
+  font-weight: 800; letter-spacing: 0.01em; line-height: 1.25; color: var(--plum);
+}
+.hero .dates .y { font-size: 0.4em; font-weight: 700; color: var(--ink-soft); margin-right: 0.5em; }
+.hero .dates .dow {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 1.08em; height: 1.08em; border-radius: 50%; vertical-align: 0.14em;
+  font-family: var(--sans); font-size: 0.32em; font-weight: 900; color: #fff; margin: 0 0.42em;
+}
+.hero .dates .dow.start { background: var(--teal); }
+.hero .dates .dow.end { background: var(--red); }
+.hero .dates .until { font-family: var(--sans); font-size: 0.34em; font-weight: 700; color: var(--ink-soft); letter-spacing: 0.08em; }
+.scroll-sign {
+  position: absolute; left: 50%; bottom: 1.5rem; transform: translateX(-50%); z-index: 2;
+  font-family: var(--geo); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.38em;
+  color: var(--ink-soft);
+}
+.scroll-sign span {
+  display: block; margin: 0.5rem auto 0; width: 11px; height: 11px; background: var(--plum);
+  clip-path: polygon(50% 100%, 0 0, 100% 0); animation: bob 2.2s var(--ease) infinite;
+}
+@keyframes bob { 0%, 100% { transform: translateY(0); opacity: .55 } 50% { transform: translateY(5px); opacity: 1 } }
+@media (prefers-reduced-motion: reduce) { .scroll-sign span { animation: none } }
+
+main { max-width: 920px; margin: 0 auto; padding: 0 1.4rem 5rem; position: relative; }
+section { padding: 4.8rem 0 1.5rem; position: relative; }
+.sec-label {
+  display: flex; align-items: center; gap: 0.7rem;
+  font-size: 0.8rem; font-weight: 900; letter-spacing: 0.26em;
+  color: var(--ink); margin-bottom: 1.1rem;
+}
+.sec-label .num {
+  font-family: var(--geo); font-size: 0.92rem; font-weight: 800;
+  letter-spacing: 0.02em; color: var(--red-deep);
+}
+.sec-label .m { width: 0.9em; height: 0.9em; flex: none; }
+.m.red-dot { background: var(--red); border-radius: 50%; }
+.m.teal-sq { background: var(--teal); border-radius: 3px; }
+.m.plum-tri { background: var(--plum); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.m.red-semi { background: var(--red); border-radius: 999px 999px 0 0; }
+.m.teal-qc { background: var(--teal); border-radius: 0 100% 0 0; }
+.m.plum-dot { background: var(--plum); border-radius: 50%; }
+.m.red-sq { background: var(--red); border-radius: 3px; }
+section > h2, .band h2 {
+  font-size: clamp(1.55rem, 4.4vw, 2.25rem); line-height: 1.62; letter-spacing: 0.04em;
+  margin-bottom: 1.9rem;
+}
+section > h2 mark { background: none; color: inherit; box-shadow: inset 0 -0.42em 0 rgba(214, 69, 69, 0.38); }
+section p + p { margin-top: 1.1em; }
+.muted { color: var(--ink-soft); font-size: 0.9rem; }
+.prose { max-width: 42em; }
+
+.shape-rule { display: flex; justify-content: center; align-items: center; gap: 0.9rem; padding: 1.4rem 0 0.2rem; }
+.shape-rule i { display: block; width: 11px; height: 11px; opacity: 0.75; }
+.shape-rule i:nth-child(1) { background: var(--red); border-radius: 50%; }
+.shape-rule i:nth-child(2) { background: var(--teal); border-radius: 0 100% 0 0; }
+.shape-rule i:nth-child(3) { background: var(--plum); clip-path: polygon(50% 0, 100% 100%, 0 100%); width: 13px; }
+.shape-rule i:nth-child(4) { background: var(--teal); border-radius: 3px; }
+.shape-rule i:nth-child(5) { background: var(--red); border-radius: 999px 999px 0 0; }
+
+.division { margin: 3.4rem 0; }
+.division-head { display: flex; align-items: center; gap: 0.85rem; margin-bottom: 0.7rem; flex-wrap: wrap; }
+.division-head .icon { position: relative; width: 36px; height: 36px; flex: none; }
+.division-head .icon i { position: absolute; }
+.division-head .icon .i2, .division-head .icon .i3 { mix-blend-mode: multiply; }
+.division-head h3 { font-size: 1.42rem; letter-spacing: 0.1em; }
+.division-head .en {
+  font-family: var(--geo); font-size: 0.66rem; font-weight: 700; letter-spacing: 0.3em;
+  color: var(--ink-soft); text-transform: uppercase;
+}
+.icon-lanobe .i1 { left: 0; top: 5px; width: 26px; height: 26px; background: var(--red); border-radius: 50%; }
+.icon-lanobe .i2 { left: 12px; top: 5px; width: 26px; height: 26px; background: var(--teal); border-radius: 50%; }
+.icon-dys .i1 { left: 2px; top: 5px; width: 26px; height: 26px; background: var(--plum); border-radius: 4px; }
+.icon-dys .i2 { left: 14px; top: 11px; width: 20px; height: 20px; background: var(--red); border-radius: 50%; }
+.icon-impl .i1 { left: 0; top: 7px; width: 30px; height: 24px; background: var(--teal); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.icon-impl .i2 { left: 14px; top: 13px; width: 20px; height: 18px; background: var(--plum); border-radius: 999px 999px 0 0; }
+.icon-sp .i1 { left: 0; top: 5px; width: 26px; height: 26px; background: var(--red); border-radius: 50%; }
+.icon-sp .i2 { left: 10px; top: 5px; width: 26px; height: 26px; background: var(--teal); border-radius: 4px; }
+.icon-sp .i3 { left: 5px; top: 13px; width: 26px; height: 18px; background: var(--plum); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.division > p.desc { color: var(--ink-soft); max-width: 42em; margin-bottom: 1.7rem; font-size: 0.95rem; }
+.division.c-sp { margin-top: 3.2rem; }
+.division.c-sp .division-head { margin-bottom: 1.1rem; }
+.division.c-sp .division-head h3 { font-size: 1.55rem; }
+.shape-rule.sp { padding: 2.6rem 0 0.6rem; gap: 1.1rem; }
+.shape-rule.sp i { width: 13px; height: 13px; opacity: 0.9; }
+.shape-rule.sp i:nth-child(2), .shape-rule.sp i:nth-child(4) { background: var(--red); }
+
+.book {
+  position: relative; overflow: hidden;
+  background: var(--panel); border-radius: var(--r);
+  margin-bottom: 1.25rem; padding: 1.7rem 1.9rem 1.7rem 2.3rem;
+  box-shadow: var(--shadow);
+  transition: transform .22s var(--ease), box-shadow .22s var(--ease);
+}
+@media (hover: hover) { .book:hover { transform: translateY(-3px); box-shadow: var(--shadow-lift); } }
+.book::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 11px; }
+.c-lanobe .book::before { background: var(--red); }
+.c-dys .book::before { background: var(--plum); }
+.c-impl .book::before { background: var(--teal); }
+.book .corner { position: absolute; right: 0; top: 0; width: 92px; height: 92px; mix-blend-mode: multiply; opacity: 0.2; border-radius: 0 0 0 100%; }
+.c-lanobe .book .corner { background: var(--red); }
+.c-dys .book .corner { background: var(--plum); }
+.c-impl .book .corner { background: var(--teal); }
+.book h4 { font-size: 1.26rem; letter-spacing: 0.05em; line-height: 1.65; margin-bottom: 0.15rem; }
+.book .author { font-size: 0.82rem; color: var(--ink-soft); letter-spacing: 0.04em; margin-bottom: 0.85rem; }
+.book p.intro { font-size: 0.95rem; margin-bottom: 1.05rem; }
+.book p.intro.rule-note {
+  font-size: 0.86rem; color: var(--ink-soft); line-height: 1.95;
+  border-left: 3px solid var(--red); padding: 0.1rem 0 0.1rem 1.1rem;
+  margin: 0 0 1.15rem 0.3rem;
+}
+.oshi {
+  background: rgba(67, 145, 123, 0.11); border-radius: 14px;
+  box-shadow: inset 4px 0 0 var(--teal);
+  padding: 1rem 1.25rem 1.05rem 1.4rem; font-size: 0.92rem;
+}
+.oshi .label {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.79rem; font-weight: 900; letter-spacing: 0.18em;
+  color: var(--teal-deep); margin-bottom: 0.4rem;
+}
+.oshi .label::before { content: ""; width: 0.78em; height: 0.78em; background: var(--teal); border-radius: 999px 999px 0 0; }
+.book.special { box-shadow: var(--shadow), 0 0 0 3px var(--red); }
+@media (hover: hover) { .book.special:hover { box-shadow: var(--shadow-lift), 0 0 0 3px var(--red); } }
+.c-sp .book::before { background: linear-gradient(var(--red) 33%, var(--teal) 33% 66%, var(--plum) 66%); }
+.special .badge {
+  display: inline-block; font-size: 0.71rem; font-weight: 900; color: #fff;
+  background: var(--red); padding: 0.18rem 1rem; border-radius: 999px;
+  letter-spacing: 0.18em; margin-bottom: 0.7rem;
+}
+.ronten-notice {
+  position: relative; overflow: hidden;
+  margin-top: 2.6rem; padding: 1.7rem 2rem;
+  background: var(--plum); color: var(--ink-inv); border-radius: var(--r);
+  font-size: 0.93rem; box-shadow: var(--shadow);
+}
+.ronten-notice .head {
+  display: block; font-weight: 900; font-size: 1.06rem; letter-spacing: 0.08em;
+  color: #fff; margin-bottom: 0.5rem;
+}
+.ronten-notice .deco { right: -30px; bottom: -30px; width: 118px; height: 118px; }
+.ronten-notice .deco i { mix-blend-mode: screen; opacity: 0.5; }
+.ronten-notice .deco .i1 { inset: 0; background: var(--teal); border-radius: 50%; }
+.ronten-notice .deco .i2 { left: -32px; top: 32px; width: 86px; height: 86px; background: var(--red); border-radius: 50%; }
+
+.prizes { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.6rem; }
+.prize {
+  position: relative; overflow: hidden;
+  background: var(--panel); border-radius: var(--r);
+  padding: 2.3rem 1.6rem 2rem; text-align: center; box-shadow: var(--shadow);
+}
+.prize .name {
+  display: inline-block; font-size: 0.92rem; font-weight: 900; letter-spacing: 0.36em;
+  padding: 0.15rem 1.2rem 0.15rem 1.56rem; border-radius: 999px; color: #fff; margin-bottom: 0.7rem;
+}
+.prize.grand .name { background: var(--red); }
+.prize:not(.grand) .name { background: var(--teal); }
+.prize .amount { font-family: var(--geo); font-size: 2.6rem; font-weight: 800; line-height: 1.15; margin-bottom: 0.35rem; }
+.prize.grand .amount { color: var(--red-deep); }
+.prize:not(.grand) .amount { color: var(--teal-deep); }
+.prize .amount .unit { font-family: var(--sans); font-size: 0.42em; font-weight: 900; margin-left: 0.1em; }
+.prize .detail { font-size: 0.84rem; color: var(--ink-soft); line-height: 1.9; }
+.prize .corner { position: absolute; left: -22px; bottom: -22px; width: 84px; height: 84px; mix-blend-mode: multiply; opacity: 0.2; border-radius: 50%; }
+.prize.grand .corner { background: var(--red); }
+.prize:not(.grand) .corner { background: var(--teal); }
+ul.notes { list-style: none; font-size: 0.86rem; color: var(--ink-soft); }
+ul.notes li { padding-left: 1.3em; text-indent: -1.3em; margin-bottom: 0.35em; }
+ul.notes li::before { content: "※ "; }
+
+.letter {
+  margin: 0 0 1.6rem; padding: 7px; border-radius: 16px; box-shadow: var(--shadow);
+  background: repeating-linear-gradient(-45deg, var(--red) 0 14px, var(--panel) 14px 28px, var(--teal) 28px 42px, var(--panel) 42px 56px);
+}
+.letter-inner { position: relative; background: var(--panel); border-radius: 10px; padding: 1.6rem 1.8rem; }
+.letter-head { font-weight: 900; font-size: 1.06rem; letter-spacing: 0.05em; margin-bottom: 0.45rem; padding-right: 3.6rem; }
+.letter-inner p:not(.letter-head) { font-size: 0.92rem; }
+.stamp {
+  position: absolute; top: 1.2rem; right: 1.3rem; width: 42px; height: 48px;
+  border: 3px solid var(--panel); outline: 2px dashed rgba(67, 145, 123, 0.75);
+  background: rgba(67, 145, 123, 0.14); transform: rotate(5deg);
+  display: flex; align-items: center; justify-content: center;
+}
+.stamp svg { width: 22px; height: 22px; }
+
+.rules-wrap { background: var(--panel); border-radius: var(--r); padding: 0.5rem 1.9rem; box-shadow: var(--shadow); }
+table.rules { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+table.rules th, table.rules td { border-bottom: 2px dotted var(--line); padding: 1.2rem 0.4rem; text-align: left; vertical-align: top; }
+table.rules tr:last-child th, table.rules tr:last-child td { border-bottom: none; }
+table.rules th { width: 10.5em; }
+table.rules th span {
+  display: inline-block; background: rgba(67, 145, 123, 0.15); color: var(--teal-deep);
+  border-radius: 999px; padding: 0.1rem 0.95rem; font-size: 0.82rem; font-weight: 900;
+  letter-spacing: 0.09em; white-space: nowrap;
+}
+table.rules td ul { padding-left: 1.3em; }
+table.rules td li { margin-bottom: 0.45em; }
+.principle {
+  font-size: 1.04rem; font-weight: 900; line-height: 2.1; letter-spacing: 0.03em;
+  background: rgba(214, 69, 69, 0.11); border-radius: 12px;
+  padding: 1rem 1.35rem; margin: 1.3rem 0 0.5rem;
+}
+.okng { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 1.3rem 0 0.4rem; }
+.okng .col-head {
+  display: inline-block; font-weight: 900; font-size: 0.84rem; letter-spacing: 0.13em;
+  color: #fff; border-radius: 999px; padding: 0.16rem 1.1rem; margin-bottom: 0.7rem;
+}
+.okng .col.ok .col-head { background: var(--teal); }
+.okng .col.ng .col-head { background: var(--red); }
+.ex { border-radius: 12px; padding: 0.9rem 1.1rem; font-size: 0.85rem; line-height: 1.9; margin-bottom: 0.7rem; }
+.okng .col.ok .ex { background: rgba(67, 145, 123, 0.12); }
+.okng .col.ng .ex { background: rgba(214, 69, 69, 0.1); }
+.ex .q { display: flex; gap: 0.5rem; font-weight: 700; align-items: flex-start; }
+.ex .q::before {
+  content: "○"; flex: none; display: inline-flex; align-items: center; justify-content: center;
+  width: 1.45em; height: 1.45em; border-radius: 50%; color: #fff;
+  font-size: 0.82em; font-weight: 900; margin-top: 0.42em; background: var(--teal);
+}
+.okng .col.ng .ex .q::before { content: "×"; background: var(--red); }
+.ex .a { display: block; color: var(--ink-soft); font-size: 0.8rem; margin-top: 0.25rem; padding-left: 1.95em; }
+.okng-hint { font-size: 0.88rem; font-weight: 700; margin-top: 0.5rem; }
+
+.band { width: 100vw; margin-left: calc(50% - 50vw); padding: 5rem 1.4rem 4.6rem; position: relative; overflow: hidden; }
+.band .inner { max-width: 920px; margin: 0 auto; position: relative; z-index: 1; }
+.band-dark { background: var(--plum); color: var(--ink-inv); }
+.band-dark h2 { color: #fff; }
+.band-dark .sec-label { color: var(--ink-inv); }
+.band-dark .sec-label .num { color: var(--green); }
+.band-dark .m.plum-tri { background: var(--green); }
+.band-dark .deco i { mix-blend-mode: screen; opacity: 0.32; }
+.band-dark .deco-a { top: -70px; right: -60px; width: 240px; height: 240px; }
+.band-dark .deco-a i { inset: 0; background: var(--teal); border-radius: 50%; }
+.band-dark .deco-b { bottom: -80px; left: -40px; width: 200px; height: 200px; }
+.band-dark .deco-b i { inset: 0; background: var(--red); border-radius: 0 100% 0 0; }
+.band-light { background: var(--panel); }
+
+.criteria { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 0.8rem; }
+.criterion {
+  background: rgba(255, 255, 255, 0.07); border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--r); padding: 1.7rem 1.5rem;
+}
+.criterion .num {
+  display: flex; align-items: center; justify-content: center;
+  width: 2.5rem; height: 2.5rem; border-radius: 50%;
+  font-family: var(--geo); font-size: 1.25rem; font-weight: 800; color: #fff; margin-bottom: 0.9rem;
+}
+.criterion:nth-child(1) .num { background: var(--red); }
+.criterion:nth-child(2) .num { background: var(--teal); }
+.criterion:nth-child(3) .num { background: var(--green); color: var(--plum); }
+.criterion h4 { font-size: 1rem; letter-spacing: 0.04em; margin-bottom: 0.5rem; line-height: 1.8; color: #fff; }
+.criterion p { font-size: 0.86rem; line-height: 1.9; color: rgba(242, 235, 228, 0.78); }
+
+.timeline { list-style: none; margin-top: 0.6rem; padding-left: 1.7rem; position: relative; }
+.timeline::before {
+  content: ""; position: absolute; left: 0.42rem; top: 1.4rem; bottom: 1.6rem; width: 2px;
+  background: repeating-linear-gradient(var(--line) 0 5px, transparent 5px 11px);
+}
+.timeline li { position: relative; display: flex; gap: 1.4rem; padding: 1rem 0.2rem; align-items: baseline; border-bottom: 2px dotted var(--line); }
+.timeline li:last-child { border-bottom: none; }
+.timeline li::before {
+  content: ""; position: absolute; left: -1.53rem; top: 1.55rem;
+  width: 0.85rem; height: 0.85rem; border-radius: 50%; background: var(--teal);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+.timeline li.em::before {
+  background: var(--red); border-radius: 0; width: 1.05rem; height: 1.05rem;
+  left: -1.63rem; clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%); box-shadow: none;
+}
+.timeline .date { font-weight: 900; min-width: 12em; letter-spacing: 0.03em; }
+.timeline li.em .date { color: var(--red-deep); }
+.timeline .what { color: var(--ink-soft); font-size: 0.95rem; }
+
+.form-cta { text-align: center; padding: 1.4rem 0 0.3rem; }
+.btn {
+  display: inline-block; background: var(--red); color: #fff;
+  font-weight: 900; text-decoration: none; padding: 1.05rem 3.2rem;
+  border-radius: 999px; letter-spacing: 0.14em; font-size: 1.02rem;
+  box-shadow: 0 4px 0 rgba(64, 46, 58, 0.5);
+  transition: transform .18s var(--ease), background .18s;
+}
+.btn:hover { transform: translateY(-2px); background: #e05752; }
+.btn.disabled { background: #7f8f80; pointer-events: none; color: #f0f4ef; box-shadow: 0 4px 0 rgba(64, 46, 58, 0.28); }
+
+footer {
+  background: var(--plum); color: #cfc2c6;
+  padding: 3.4rem 1.4rem 3.8rem; text-align: center; font-size: 0.84rem;
+  position: relative; overflow: hidden;
+}
+footer .fmark { width: 34px; height: 34px; margin: 0 auto 0.9rem; display: block; }
+footer .site-name { font-size: 1.04rem; font-weight: 900; color: #fff; letter-spacing: 0.18em; margin-bottom: 0.45rem; }
+footer .links { margin: 1.1rem auto; max-width: 34rem; position: relative; z-index: 1; }
+footer .links a { color: #fff; text-decoration: none; border-bottom: 1px solid rgba(255, 255, 255, 0.45); padding-bottom: 2px; }
+footer .links a:hover { color: var(--green); border-color: var(--green); }
+footer .geo i { mix-blend-mode: screen; opacity: 0.36; }
+footer .geo.fl { left: -60px; bottom: -60px; width: 230px; height: 230px; }
+footer .geo.fl .a { inset: 0; background: var(--teal); border-radius: 50%; }
+footer .geo.fl .b { left: 115px; top: 45px; width: 125px; height: 125px; background: var(--red); border-radius: 0 100% 0 0; }
+footer .geo.fr { right: -45px; top: -45px; width: 190px; height: 190px; }
+footer .geo.fr .a { inset: 0; background: var(--red); border-radius: 50%; }
+footer .geo.fr .b { left: -55px; top: 75px; width: 115px; height: 115px; background: var(--green); border-radius: 50%; }
+
+@media print {
+  .fixed-cta, .scroll-sign, nav { display: none !important; }
+  body { background-image: none; }
+  header.hero { min-height: auto; padding: 2.5rem 1rem 3rem; }
+  .hero .geo { display: none !important; }
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+  .band { width: auto; margin-left: 0; }
+  .book, .prize, .criterion, .rules-wrap, .ronten-notice, .letter, .okng .col { break-inside: avoid; }
+  .book, .prize, .criterion, .letter { box-shadow: none; border: 1px solid var(--line); }
+}
+
+@media (max-width: 860px) {
+  .criteria { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+  nav .inner { gap: 0.7rem 1.15rem; }
+  nav .navlinks { gap: 1.15rem; }
+  .prizes, .criteria, .okng { grid-template-columns: 1fr; }
+  .hero { min-height: 88svh; padding-bottom: 5.5rem; }
+  .hero .deco-tr { width: 190px; height: 190px; top: -55px; right: -55px; }
+  .hero .deco-tr .b { top: 70px; right: 70px; width: 115px; height: 115px; }
+  .hero .deco-bl { width: 220px; height: 220px; bottom: -55px; left: -35px; }
+  .hero .deco-bl .a, .hero .deco-bl .b { width: 110px; height: 110px; }
+  .hero .deco-bl .b { left: 110px; }
+  .hero .deco-ml, .hero .deco-mr { display: none; }
+  .hero .deco-bl .c { left: 55px; bottom: 95px; width: 84px; height: 84px; }
+  .book { padding: 1.4rem 1.4rem 1.4rem 1.85rem; }
+  .rules-wrap { padding: 0.5rem 1.3rem; }
+  table.rules th { display: block; width: auto; border-bottom: none; padding-bottom: 0.2rem; }
+  table.rules td { display: block; padding-top: 0.5rem; }
+  .timeline li { flex-wrap: wrap; gap: 0.5rem; }
+  .fixed-cta {
+    left: 0; right: 0; bottom: 0; border-radius: 0; text-align: center;
+    box-shadow: 0 -2px 10px rgba(64, 46, 58, 0.35);
+  }
+  .fixed-cta:hover { transform: none; }
+  body { padding-bottom: 3.4rem; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <a class="brand" href="#top">
+      <svg viewBox="0 0 120 120" aria-hidden="true"><circle cx="60" cy="26" r="24" fill="#43917b"/><path d="M16 36a44 44 0 0 0 88 0z" fill="#d64545" style="mix-blend-mode:multiply"/><rect x="53" y="80" width="14" height="20" fill="#402e3a"/><rect x="32" y="100" width="56" height="11" rx="5" fill="#402e3a"/></svg>
+      笹木杯
+    </a>
+    <div class="navlinks">
+      <a href="#about">趣旨</a>
+      <a href="#books">課題図書</a>
+      <a href="#prizes">賞</a>
+      <a href="#rules">応募規定</a>
+      <a href="#judge">審査</a>
+      <a href="#schedule">日程</a>
+    </div>
+  </div>
+</nav>
+
+<a class="fixed-cta" href="#form">応募は 10.1 から</a>
+
+<header class="hero" id="top">
+  <div class="geo deco-tr" aria-hidden="true"><i class="a"></i><i class="b"></i></div>
+  <div class="geo deco-bl" aria-hidden="true"><i class="a"></i><i class="b"></i><i class="c"></i></div>
+  <div class="geo deco-ml" aria-hidden="true"><i class="a"></i></div>
+  <div class="geo deco-mr" aria-hidden="true"><i class="a"></i></div>
+
+  <div class="stage">
+    <p class="en">Sasaki Hai · Reading Essay Contest</p>
+    <svg class="cup" viewBox="0 0 120 118" aria-hidden="true">
+      <circle cx="60" cy="24" r="24" fill="#43917b"/>
+      <path d="M14 34a46 46 0 0 0 92 0z" fill="#d64545" style="mix-blend-mode:multiply"/>
+      <rect x="53" y="80" width="14" height="22" fill="#402e3a"/>
+      <rect x="30" y="102" width="60" height="12" rx="6" fill="#402e3a"/>
+    </svg>
+    <p class="edition">第一回</p>
+    <h1>笹木<span class="accent">杯</span></h1>
+    <p class="subname">読書感想文コンクール</p>
+    <p class="tagline">ラノベからカラマーゾフまで。</p>
+    <div class="period">
+      <span class="label">応募受付期間</span>
+      <p class="dates">
+        <span class="y">2026</span>10.1<span class="dow start">木</span>–<span class="y">2027</span>1.3<span class="dow end">日</span><span class="until">23:59まで</span>
+      </p>
+    </div>
+  </div>
+  <div class="scroll-sign">SCROLL<span aria-hidden="true"></span></div>
+</header>
+
+<main>
+
+<section id="about">
+  <p class="sec-label" data-reveal><span class="num">01</span><span class="m red-dot"></span>開催趣旨</p>
+  <h2 data-reveal>好きな本を課題図書にして、<br><mark>いろいろな人の感想文を読みたい。</mark></h2>
+  <div class="prose" data-reveal>
+    <p>この企画はそれだけの理由で始まった、個人主催の読書感想文コンクールです。課題図書の選書基準はただひとつ、「笹木が好きな本」。その結果、ラノベとディストピアと中央銀行総裁の日記とカラマーゾフが同じリストに並びました。統一テーマはありません。あるのは主催者の好みだけです。</p>
+    <p>だから感想も好きに書いてください。あなたがどの本のどこで立ち止まったのか、それが読みたい。</p>
+    <p class="muted">年1回、年末に開催します。今回が第1回です。</p>
+  </div>
+</section>
+
+<div class="shape-rule" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+<section id="books">
+  <p class="sec-label" data-reveal><span class="num">02</span><span class="m teal-sq"></span>部門と課題図書</p>
+  <h2 data-reveal>課題図書は八つ。<br>書くのはひとつ。</h2>
+  <p class="prose muted" data-reveal>応募は各部門一本まで。部門をまたぐのは自由。特別課題図書は別枠でもう一本。つまり最大四本です。欲張りさんの分まで、ちゃんと読みます。シリーズものは第1巻だけ・途中までの読了でも構いません（どこまで読んだかが分かるように書いてください）。</p>
+
+  <div class="division c-lanobe">
+    <div class="division-head" data-reveal>
+      <span class="icon icon-lanobe"><i class="i1"></i><i class="i2"></i></span>
+      <h3>ラノベ部門</h3><span class="en">Light Novel</span>
+    </div>
+    <p class="desc" data-reveal>転生した王様に、戦場の幼女に、歌舞伎町の陽キャ。全員、とんでもない場所に放り込まれて、手持ちのカードで最善手を打とうとします。うまくいったかどうかの判定は、読んだあなたに委ねます。三作ともWeb版がありますが、書籍で改稿されているので書籍版をおすすめします。</p>
+
+    <div class="book" data-reveal>
+      <span class="corner"></span>
+      <h4>『汝、暗君を愛せよ』</h4>
+      <p class="author">本条謙太郎</p>
+      <p class="intro">病から回復した王は、別人のように聡明になっていた——という転生ものです。ただし無双はしません。やるのは国家運営。予算、外交、人事、信仰。玉座が世界で一番冷たい椅子だと教えてくれる政治小説です。</p>
+      <div class="oshi">
+        <span class="label">笹木の推しポイント</span>
+        <p>『幼女戦記』の作者が薦めていたので読みました。正解でした。王に面と向かって「あなたは間違っている」と言う人物が出てきます。理屈で世界を裁こうとして、いろんなところにぶつかりながら成長していくタイプ。私はこういう人間に弱い。カラマーゾフの次男に肩入れする人は、たぶんこの人にもやられます。世界史が好きだった人、組織で役職に就いている人にも。</p>
+      </div>
+    </div>
+
+    <div class="book" data-reveal>
+      <span class="corner"></span>
+      <h4>『幼女戦記』</h4>
+      <p class="author">カルロ・ゼン</p>
+      <p class="intro">神を信じない合理主義のサラリーマンが、神を名乗る何かの手で、戦争の世界に幼女として転生させられます。前世の常識で最適解を積み上げるほど、世界は斜め上に転がる。戦記であり、組織小説であり、人間と神様の意地の張り合いの記録です。</p>
+      <div class="oshi">
+        <span class="label">笹木の推しポイント</span>
+        <p>この主人公みたいな上司のもとで働きたくありませんか。私は働きたい。そうなれるように毎日勉強しているくらいです。……引きましたか。では追い打ちを。私はこれまで、監視国家で人を尋問する側の男、管理社会を運営する側の人、神を理屈で否定する次男に、片っ端から惚れてきました。初恋は小学3年生、あの魔法学校の話に出てくる鼻のない敵役です。その私が、いま戦場の幼女にメロメロになっている。意味は、最新刊まで読んで確かめに来てください。</p>
+      </div>
+    </div>
+
+    <div class="book" data-reveal>
+      <span class="corner"></span>
+      <h4>『異世界転生勧誘詐欺』</h4>
+      <p class="author">良い人</p>
+      <p class="intro">「異世界転生」の正体は、異世界人による地球人の拉致ビジネスだった——という身も蓋もない前提から始まる犯罪コメディ。歌舞伎町の夜の商売人たちが異世界を荒らします。暴力は大いにあり。その上に話術と制度まで味方につけるのが、彼らの流儀です。</p>
+      <div class="oshi">
+        <span class="label">笹木の推しポイント</span>
+        <p>学校にいましたよね、陽キャ。あの人たちも異世界転生するんでしょうか。この本の答えは「する。しかも上手にやる」です。彼らは息をするように人を気遣い、努力に慣れていて、自分が伸びるのを楽しめる。教室の隅で問題集を解いていた私は、安全な場所から観察しながら、殴られた気持ちと少し救われた気持ちを同時に味わいました。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="division c-dys">
+    <div class="division-head" data-reveal>
+      <span class="icon icon-dys"><i class="i1"></i><i class="i2"></i></span>
+      <h3>ディストピア部門</h3><span class="en">Dystopia</span>
+    </div>
+    <p class="desc" data-reveal>こわい顔で治める世界と、にこにこしながら治める世界。20世紀の二大ディストピアは、正反対のやり方で同じことをやってのけました。さて、読んだ世界にあなたは住めそうですか。「案外住めるかも」と思ったなら、その理由こそ読ませてください。思想調査はしません。</p>
+
+    <div class="book" data-reveal>
+      <span class="corner"></span>
+      <h4>『一九八四年』</h4>
+      <p class="author">ジョージ・オーウェル　※翻訳はどの版でも構いません</p>
+      <p class="intro">監視カメラと盗聴が日常で、昨日の新聞が今日書き換えられ、言葉そのものが年々減っていく国の話です。主人公の職業は、その書き換えを行う係。ディストピア小説の本家本元ですが、この世界で一番こわい装置は暴力ではありません。辞書です。</p>
+      <div class="oshi">
+        <span class="label">笹木の推しポイント</span>
+        <p>「わかりやすく説明できる人こそ、頭がいい」。この主張は真でしょうか、偽でしょうか。私はこの本を読んでから即答できなくなりました。この国の新しい言葉づかいがこわいのは、無茶だからではなく、合理的だからです。巻末付録の言語解説まで読んでから、もう一度どうぞ。ちなみに私の推しは、主人公を尋問する側の男です。理屈がこわいくらい通っている。</p>
+      </div>
+    </div>
+
+    <div class="book" data-reveal>
+      <span class="corner"></span>
+      <h4>『すばらしい新世界』</h4>
+      <p class="author">オルダス・ハクスリー　※翻訳はどの版でも構いません</p>
+      <p class="intro">人間は工場で生産され、生まれる前から階級と適性が決められていて、不満は薬を一錠飲めば消える。そういう世界で、住人たちは本当に幸福に暮らしています。抑圧のディストピアの正反対、「幸福のディストピア」の代表作です。</p>
+      <div class="oshi">
+        <span class="label">笹木の推しポイント</span>
+        <p>拷問する独裁者も、密告する隣人も出てきません。みんな親切で、毎日楽しそうです。……正直に言います。私は「こんな世界に早くなってほしい」と思いながら読みました。今が幸せなら、それでよくないですか。引いた人も、うなずいた人も、答えを感想文で聞かせてください。いつかムスタファ・モンドさんの風格を身につけたいもんですね。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="division c-impl">
+    <div class="division-head" data-reveal>
+      <span class="icon icon-impl"><i class="i1"></i><i class="i2"></i></span>
+      <h3>実装部門</h3><span class="en">Implementation</span>
+    </div>
+    <p class="desc" data-reveal>一冊は、人類を滅亡させるべきかを七人で討議するフィクション。もう一冊は、独立直後のルワンダで通貨改革をやり遂げた銀行家の記録。会議室と現場、正反対の二冊を同じ部門に押し込んだのはわざとです。「決めること」と「やること」のあいだに何があるのか、見てきてください。</p>
+
+    <div class="book" data-reveal>
+      <span class="corner"></span>
+      <h4>『ただしい人類滅亡計画』</h4>
+      <p class="author">品田遊　※副題「反出生主義をめぐる物語」</p>
+      <p class="intro">「人類は、このまま存続するべきか」。この一点だけを、立場の違う七人が延々と討議する物語です。哲学対話ですが、専門用語はほぼゼロ。感情論も禁じ手ではありません。そして賛成にも反対にも、最強の代弁者がつきます。</p>
+      <div class="oshi">
+        <span class="label">笹木の推しポイント</span>
+        <p>「生まれてこなければよかった」と、一度でも思ったことはありますか。私はあります。長いこと、うっすらと。この本は、その気持ちに初めて誠実な言葉をくれました。読み終えたとき、私は「生まれてこなければよかった」の少し先に進めました。</p>
+      </div>
+    </div>
+
+    <div class="book" data-reveal>
+      <span class="corner"></span>
+      <h4>『ルワンダ中央銀行総裁日記』</h4>
+      <p class="author">服部正也　※増補版・通常版どちらでも構いません</p>
+      <p class="intro">1965年、日銀マンだった著者は、独立から3年のルワンダへ中央銀行総裁として派遣されます。前任者は事実上なにもせずに解任済み、空港には建物すらない。そこから通貨を立て直し、財政を立て直し、しまいにはバス会社まで立て直す。60年前のアフリカで実際に行われた経済再建の一部始終を、本人が淡々と記録した本です。</p>
+      <div class="oshi">
+        <span class="label">笹木の推しポイント</span>
+        <p>偏屈な人に薦められて読みました。そして今、私が偏屈な顔であなたに薦めています。予算も人手も権限も足りない場所で何かを実際に動かした人には、必ず刺さる箇所があります。「決めること」と「やること」のあいだに何があるのか——その答えが、全部この本に書いてあります。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="shape-rule sp" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+
+  <div class="division c-sp">
+    <div class="division-head" data-reveal>
+      <span class="icon icon-sp"><i class="i1"></i><i class="i2"></i><i class="i3"></i></span>
+      <h3>特別課題図書</h3><span class="en">Grand Prize Challenge</span>
+    </div>
+    <div class="book special" data-reveal>
+      <span class="badge">大賞挑戦枠</span>
+      <h4>『カラマーゾフの兄弟』</h4>
+      <p class="author">ドストエフスキー　※翻訳はどの版でも構いません</p>
+      <p class="intro">強欲な父親と、性格のまるで違う三人の息子の物語です。物語の途中で父が殺され、裁判になります。ただ、この本の本体は事件ではなく、登場人物たちの語りです。とんでもなく長い語りが、いくつも挟まります。そしてそれが、一番おもしろい。</p>
+      <p class="intro rule-note">この一冊だけは、どの部門にも属しません。文庫で数冊分あり、登場人物は一人につき名前を三つ持っています。読み通すだけでも大仕事なのに、狙えるのは大賞のみ。いちばん長い本で、いちばん狭い門です。割に合うかは保証しません。それでも挑む人の感想文を、主催者は一番読みたいと思っています。</p>
+      <div class="oshi">
+        <span class="label">笹木の推しポイント</span>
+        <p>白状すると、三回挫折して四回目で読み通しました。挫折の言い訳には全部覚えがあります。その上で言うと、この企画のひそかな目的は初読の感想の青田買いです。研究者の論文はもう山ほどある。普段こういう古典を読まない人の感想が、お腹いっぱい読みたい。続編は存在しません。作者が亡くなったからです。そのことに、私は読み返すたび新鮮に驚き、新鮮に悲しんでいます。ちなみに私は次男の味方です。神を理屈で否定して、自分でそれに耐えきれなくなる人です。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="ronten-notice" data-reveal>
+    <span class="geo deco" aria-hidden="true"><i class="i1"></i><i class="i2"></i></span>
+    <span class="head">笹木の感想文は、あとのお楽しみ。</span>
+    実は主催者も、これらの本の感想文を書いています。ただ、審査する本人の感想を先に見せると「審査員の好みに寄せる大会」になってしまうので、公開は締切後です。結果発表のころに、読み比べて楽しんでください。
+  </div>
+</section>
+
+<section id="prizes">
+  <p class="sec-label" data-reveal><span class="num">03</span><span class="m red-semi"></span>賞</p>
+  <h2 data-reveal>大賞一名、部門賞六名。</h2>
+  <div class="prizes">
+    <div class="prize grand" data-reveal>
+      <span class="corner"></span>
+      <p class="name">大賞</p>
+      <p class="amount">30,000<span class="unit">円分</span></p>
+      <p class="detail">1名／図書カードNEXTネットギフト<br>全応募作品（特別課題図書を含む）から選出</p>
+    </div>
+    <div class="prize" data-reveal>
+      <span class="corner"></span>
+      <p class="name">部門賞</p>
+      <p class="amount">5,000<span class="unit">円分</span></p>
+      <p class="detail">各部門2名・計6名／図書カードNEXTネットギフト</p>
+    </div>
+  </div>
+  <div class="letter" data-reveal>
+    <div class="letter-inner">
+      <span class="stamp" aria-hidden="true">
+        <svg viewBox="0 0 120 118"><circle cx="60" cy="24" r="24" fill="#43917b"/><path d="M14 34a46 46 0 0 0 92 0z" fill="#d64545" style="mix-blend-mode:multiply"/><rect x="53" y="80" width="14" height="22" fill="#402e3a"/><rect x="30" y="102" width="60" height="12" rx="6" fill="#402e3a"/></svg>
+      </span>
+      <p class="letter-head">そして賞とは別に、お手紙が届きます。</p>
+      <p>受賞の有無にかかわらず、応募してくださった方には短評——というより、あなたの感想へのお返事——を可能な範囲でお送りします。たくさん来たら書ききれないかもしれません。そのときはごめんなさい。</p>
+    </div>
+  </div>
+  <ul class="notes" data-reveal>
+    <li>大賞受賞作品は部門賞の選考対象から除きます。</li>
+    <li>応募数が少ない部門では、受賞者数を減らす場合があります。</li>
+    <li>賞品（図書カードNEXTネットギフト）はメールで送付します。税務上の処理は受賞者ご自身の責任で行ってください。</li>
+  </ul>
+</section>
+
+<section id="rules">
+  <p class="sec-label" data-reveal><span class="num">04</span><span class="m teal-qc"></span>応募規定</p>
+  <h2 data-reveal>応募について</h2>
+  <div class="rules-wrap" data-reveal>
+  <table class="rules">
+    <tr><th><span>字数・言語</span></th><td>本文800字以上8,000字以内、日本語。</td></tr>
+    <tr><th><span>応募資格</span></th><td>不問（年齢・居住地・プロアマ問わず）。ハンドルネームでの応募可。未成年の方は保護者の同意を得た上でご応募ください。</td></tr>
+    <tr><th><span>応募点数</span></th><td>1人につき各部門1作まで。複数部門への応募可。特別課題図書への応募もこれとは別に1作まで可（すべて応募すると最大4作）。</td></tr>
+    <tr><th><span>応募方法</span></th><td>Googleフォームに本文を貼り付けて送信。収集する情報はペンネーム（発表時に使用）と連絡用メールアドレスのみです。メールアドレスは賞品送付と事務連絡にのみ使用し、企画終了後に削除します。</td></tr>
+    <tr><th><span>作品の条件</span></th><td>未発表のオリジナル作品に限ります。他コンクールとの二重応募、既にWeb等で公開した文章の応募はご遠慮ください。</td></tr>
+    <tr><th><span>生成AI</span></th><td>使用可とします。ただし、使用した場合は応募フォームの記載欄に、どの工程でどう使ったか（例:構成の壁打ち、文章の推敲、下書きの生成など）を記載してください。使用の有無や使い方は選考上の減点対象にはしませんが、記載がないまま使用が判明した場合は選考対象外とします。</td></tr>
+    <tr><th><span>書くときの注意</span></th><td>
+      <ul>
+        <li>課題図書からの引用は、感想を述べるのに必要な範囲にとどめ、引用箇所が分かるように書いてください。</li>
+        <li>応募作品が他人の著作権などの権利を侵害しないことを、ご自身で確認のうえご応募ください。万一、権利をめぐる問題が生じた場合は応募者ご本人に対応していただくことになり、主催者は関与せず、責任も負いません。</li>
+        <li>作品の主題（生命・死・思想等）に関する見解は自由ですが、特定の行為や立場を読み手に推奨する内容（自殺・自傷を勧める内容、特定の個人・集団への加害や差別を呼びかける内容、読み手の行動や人生の選択に直接働きかける内容）は選考対象外とします。</li>
+      </ul>
+      <div class="okng">
+        <div class="col ok">
+          <span class="col-head">これはOK</span>
+          <div class="ex">
+            <span class="q">「滅亡賛成派の主張に、気づけばうなずいていた。そんな自分が怖い」</span>
+            <span class="a">自分について書くのは自由です。むしろ一番読みたいところです。</span>
+          </div>
+          <div class="ex">
+            <span class="q">「あの監視国家を、正直ちょっと羨ましいと思ってしまった」</span>
+            <span class="a">見解は自由。ぎょっとする読みほど歓迎します。</span>
+          </div>
+          <div class="ex">
+            <span class="q">「この主人公にはまったく共感できなかった。理由は三つある」</span>
+            <span class="a">批判も立派な感想です。賛否は問いません。</span>
+          </div>
+        </div>
+        <div class="col ng">
+          <span class="col-head">これはアウト</span>
+          <div class="ex">
+            <span class="q">「だから、あなたも産むのをやめるべきだ」</span>
+            <span class="a">「あなたも」が出た瞬間、感想文が勧誘に変わります。</span>
+          </div>
+          <div class="ex">
+            <span class="q">「実在の〇〇のような人たちは、排除されるべきだ」</span>
+            <span class="a">特定の個人・集団への加害や差別の呼びかけは論外です。</span>
+          </div>
+          <div class="ex">
+            <span class="q">自殺や自傷を勧める・美化して誘う内容</span>
+            <span class="a">ここは冗談抜きでアウトです。作中の死生観への考察とは区別します。</span>
+          </div>
+        </div>
+      </div>
+      <p class="okng-hint">見分け方はシンプルです。主語が「私」のあいだは自由。「あなたも」と読み手に手を伸ばしたら赤信号。</p>
+      <p class="principle">作品について、自分について書くのは自由です。<br>読み手に何かをさせようとする文章だけが対象外です。</p>
+    </td></tr>
+    <tr><th><span>作品の取り扱い</span></th><td>
+      <ul>
+        <li>作品の著作権は応募者に帰属します。</li>
+        <li>応募をもって、主催者が本企画の告知・結果発表・振り返りの目的で、応募作品の全部または一部（抜粋・要約を含む）を主催者のnote等に掲載することに同意したものとみなします。</li>
+        <li>企画終了後、収録に同意いただいた応募作品を「第1回 笹木杯 記録集」としてまとめ、電子版を無償で公開する予定です。収録の可否は応募フォームでお伺いします（任意です。収録可否は審査に一切影響しません）。</li><li>記録集に収録する際はペンネームを表示します。公開前であれば、収録の取り下げをいつでも受け付けます。</li>
+      </ul>
+    </td></tr>
+    <tr><th><span>受賞後のこと</span></th><td>
+      <ul>
+        <li>結果発表後14日以内に賞品送付のご連絡が取れない場合、受賞を取り消すことがあります。メールアドレスはお間違いのないように。</li>
+        <li>受賞後であっても、応募規定への違反（盗作、二重応募、生成AI使用の無申告等）が判明した場合は、受賞を取り消し、賞品の返還を求めることがあります。</li>
+      </ul>
+    </td></tr>
+    <tr><th><span>運営について</span></th><td>
+      <ul>
+        <li>やむを得ない事情により、企画の内容の変更または中止を行う場合があります。その際は主催者のnote／Xでお知らせします。</li>
+        <li>本コンクールは個人が主催する企画であり、出版社・著者・他のコンクールとは一切関係ありません。</li>
+      </ul>
+    </td></tr>
+  </table>
+  </div>
+</section>
+
+<section id="judge" class="band band-dark">
+  <span class="geo deco deco-a" aria-hidden="true"><i></i></span>
+  <span class="geo deco deco-b" aria-hidden="true"><i></i></span>
+  <div class="inner">
+    <p class="sec-label" data-reveal><span class="num">05</span><span class="m plum-tri"></span>審査</p>
+    <h2 data-reveal>笹木という一人の読者に向けて<br>書く感想文のコンクールです。</h2>
+    <p class="prose" data-reveal>審査は主催者（笹木）が単独で行います。外部審査員はいません。重視するのは次の3点です。</p>
+    <div class="criteria">
+      <div class="criterion" data-reveal>
+        <p class="num">1</p>
+        <h4>その本を読んだことが伝わるか</h4>
+        <p>あらすじの要約ではなく、あなたがどこで立ち止まり、何を考えたかが書かれていること。</p>
+      </div>
+      <div class="criterion" data-reveal>
+        <p class="num">2</p>
+        <h4>自分の言葉で書かれているか</h4>
+        <p>借り物の評価軸ではなく、あなた自身の読みであること。</p>
+      </div>
+      <div class="criterion" data-reveal>
+        <p class="num">3</p>
+        <h4>課題図書と向き合っているか</h4>
+        <p>作品への賛否は問いません。批判的な感想も歓迎します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="schedule">
+  <p class="sec-label" data-reveal><span class="num">06</span><span class="m plum-dot"></span>スケジュール</p>
+  <h2 data-reveal>日程</h2>
+  <ul class="timeline" data-reveal>
+    <li><span class="date">2026年10月1日（木）</span><span class="what">応募受付開始</span></li>
+    <li class="em"><span class="date">2027年1月3日（日）23:59</span><span class="what">応募締切（三が日まで。年末年始に書き上げる人を待ちます）</span></li>
+    <li><span class="date">締切後</span><span class="what">笹木の感想文を公開／主催者が単独審査</span></li>
+    <li><span class="date">2027年2月下旬</span><span class="what">結果発表の予定（主催者のnote／Xにて）</span></li>
+  </ul>
+</section>
+
+<section id="form" class="band band-light">
+  <div class="inner">
+    <p class="sec-label" data-reveal><span class="num">07</span><span class="m red-sq"></span>応募フォーム</p>
+    <h2 data-reveal>応募する</h2>
+    <p class="prose" data-reveal>10月1日、ここにGoogleフォームへのリンクが出ます。それまでは課題図書をゆっくり読む期間です。</p>
+    <div class="form-cta" data-reveal>
+      <a class="btn disabled" href="#form">応募フォーム（10月1日公開）</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <span class="geo fl" aria-hidden="true"><i class="a"></i><i class="b"></i></span>
+  <span class="geo fr" aria-hidden="true"><i class="a"></i><i class="b"></i></span>
+  <svg class="fmark" viewBox="0 0 120 118" aria-hidden="true">
+    <circle cx="60" cy="24" r="24" fill="#43917b"/>
+    <path d="M14 34a46 46 0 0 0 92 0z" fill="#d64545" style="mix-blend-mode:screen"/>
+    <rect x="53" y="80" width="14" height="22" fill="#96cf9e"/>
+    <rect x="30" y="102" width="60" height="12" rx="6" fill="#96cf9e"/>
+  </svg>
+  <p class="site-name">第1回 笹木杯読書感想文コンクール</p>
+  <p>主催:笹木（個人）</p>
+  <div class="links">
+    <a href="https://x.com/sasaky_k">X: @sasaky_k</a>　／　<a href="https://note.com/nakannzuku">note: 笹木</a>
+  </div>
+  <p style="margin-top:1rem;">本コンクールは個人が主催する企画であり、出版社・著者・他のコンクールとは一切関係ありません。</p>
+</footer>
+
+<script>
+document.documentElement.classList.add('js');
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = document.querySelectorAll('[data-reveal]');
+  if (reduce || !('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('shown'); });
+  } else {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add('shown'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+    targets.forEach(function (el) { io.observe(el); });
+  }
+
+  var nav = document.querySelector('nav');
+  var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 8); };
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav .navlinks a'));
+  var sections = links.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  if ('IntersectionObserver' in window) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var i = sections.indexOf(e.target);
+        links.forEach(function (a, j) { a.classList.toggle('active', i === j); });
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    sections.forEach(function (s) { if (s) spy.observe(s); });
+  }
+})();
+</script>
+
+</body>
+</html>
